@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Identidade visual — Arrecife Ateliê</title>
+  <meta name="description" content="Manual de identidade visual da Arrecife Ateliê: logo, cores, tipografia e tom de voz.">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <p class="sobretitulo">Manual da marca</p>
+        <h1>Identidade visual</h1>
+        <p>O guia rápido para usar a marca Arrecife Ateliê de forma consistente no site, nas redes, nas etiquetas e na loja.</p>
+      </div>
+    </section>
+
+    <section class="container secao">
+      <h2>Conceito</h2>
+      <p class="texto-longo"><strong>Arrecife</strong> é a palavra antiga para “recife”: a barreira de pedras que deu nome à cidade e que transforma o mar agitado em água calma. A marca traduz isso em moda leve, acolhedora e com raiz pernambucana. <strong>Ateliê</strong> reforça o feito à mão, em pequena escala.</p>
+
+      <h2 style="margin-top: 48px">Logo</h2>
+      <div class="marca-logo">
+        <div style="background: var(--areia)"><img src="assets/logo.svg" alt="Logo completo" width="320"></div>
+        <div style="background: var(--azul-mare)"><img src="assets/simbolo.svg" alt="Símbolo" width="110"></div>
+        <div style="background: #fff; border: 1px solid var(--borda)"><img src="assets/simbolo.svg" alt="Símbolo em fundo branco" width="110"></div>
+      </div>
+      <ul class="texto-longo" style="margin-top: 20px">
+        <li><strong>Símbolo:</strong> o sol (amarelo) nascendo sobre duas ondas (azul) e a linha do arrecife (coral) — a paisagem do Marco Zero ao amanhecer.</li>
+        <li><strong>Logotipo:</strong> “arrecife” em Fraunces itálico, minúsculo, para soar próximo e artesanal; “ATELIÊ · RECIFE” em Inter espaçado.</li>
+        <li><strong>Área de respiro:</strong> mantenha ao redor do logo um espaço livre igual à altura da letra “a”.</li>
+        <li><strong>Não faça:</strong> não distorça, não troque as cores do símbolo, não aplique sobre fotos muito poluídas.</li>
+      </ul>
+    </section>
+
+    <section class="secao secao--areia">
+      <div class="container">
+        <h2>Paleta de cores</h2>
+        <div class="paleta" id="paleta" style="margin-top: 24px"></div>
+        <p class="texto-suave" style="margin-top: 16px">Proporção sugerida: 60% Areia/Branco, 25% Azul Maré, 10% Coral, 5% Sol e Mangue.</p>
+      </div>
+    </section>
+
+    <section class="container secao grade-duas">
+      <div>
+        <h2>Tipografia</h2>
+        <p style="font-family: var(--fonte-titulo); font-size: 2.6rem; color: var(--azul-mare); margin: 0">Fraunces</p>
+        <p class="texto-suave">Títulos e destaques. Serifada, com curvas suaves — elegância com personalidade.</p>
+        <p style="font-size: 2rem; font-weight: 600; margin: 24px 0 0">Inter</p>
+        <p class="texto-suave">Textos, botões e preços. Clara e muito legível em telas pequenas.</p>
+      </div>
+      <div>
+        <h2>Tom de voz</h2>
+        <ul>
+          <li><strong>Próximo e caloroso</strong>, como uma conversa na calçada: “Vem ver a nova coleção!”.</li>
+          <li><strong>Orgulhosamente recifense</strong>: citamos bairros, ruas, o frevo, o mangue — sem caricatura.</li>
+          <li><strong>Leve e calmo</strong>: sem gritaria de liquidação. Promoção é convite, não pressão.</li>
+          <li><strong>Inclusivo</strong>: falamos com todas as pessoas, preferindo termos neutros.</li>
+        </ul>
+        <h3>Elementos gráficos</h3>
+        <p class="texto-suave">Ondas (como no rodapé da página inicial), arcos de sol nos cards e cantos arredondados (14 px). Ícones de traço fino.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    /* Amostras da paleta. Os valores são os mesmos das variáveis em css/estilos.css. */
+    const PALETA = [
+      { nome: "Azul Maré", hex: "#1B3A4B", uso: "Cor principal, textos de destaque, botões" },
+      { nome: "Coral Recife", hex: "#E2725B", uso: "Destaques, promoções, chamadas" },
+      { nome: "Sol do Frevo", hex: "#F2B134", uso: "Detalhes, ícones, cupons" },
+      { nome: "Verde Mangue", hex: "#4F6F52", uso: "Apoio, sustentabilidade" },
+      { nome: "Areia", hex: "#F4EBDD", uso: "Fundos e seções" },
+      { nome: "Tinta", hex: "#1E1E1E", uso: "Texto corrido" },
+    ];
+    document.getElementById("paleta").innerHTML = PALETA.map((c) => `
+      <div class="cor">
+        <div class="cor__amostra" style="background:${c.hex}"></div>
+        <div class="cor__info"><strong>${c.nome}</strong>${c.hex}<br><span class="texto-suave">${c.uso}</span></div>
+      </div>`).join("");
+  </script>
+</body>
+</html>

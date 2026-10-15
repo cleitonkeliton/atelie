@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja — Arrecife Ateliê</title>
+  <meta name="description" content="Todas as peças da Arrecife Ateliê: vestidos, camisas, blusas, calças, saias e acessórios.">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em" style="padding-top: 0"><a href="index.html">Início</a> / Loja</nav>
+        <h1 id="titulo-catalogo">Loja</h1>
+        <p id="descricao-catalogo">Peças autorais feitas no Recife.</p>
+      </div>
+    </section>
+
+    <div class="container catalogo">
+      <!-- FILTROS: os checkboxes são criados pelo js/pagina-catalogo.js -->
+      <aside class="filtros" id="filtros" aria-label="Filtros">
+        <h2>Filtrar</h2>
+        <form id="form-filtros">
+          <fieldset>
+            <legend>Categoria</legend>
+            <div id="filtro-categorias"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Coleção</legend>
+            <div id="filtro-colecoes"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Tamanho</legend>
+            <div class="tamanhos-filtro" id="filtro-tamanhos"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Preço</legend>
+            <label><input type="radio" name="preco" value="" checked> Todos</label>
+            <label><input type="radio" name="preco" value="0-150"> Até R$ 150</label>
+            <label><input type="radio" name="preco" value="150-250"> R$ 150 a R$ 250</label>
+            <label><input type="radio" name="preco" value="250-9999"> Acima de R$ 250</label>
+          </fieldset>
+          <fieldset>
+            <legend>Ofertas</legend>
+            <label><input type="checkbox" name="promo" value="1"> Só promoções</label>
+          </fieldset>
+          <button class="botao botao--largo" type="reset">Limpar filtros</button>
+        </form>
+      </aside>
+
+      <section aria-labelledby="titulo-catalogo">
+        <div class="catalogo__barra">
+          <button class="botao botao-filtros" type="button" aria-controls="filtros" aria-expanded="false">Filtros</button>
+          <p class="texto-suave" id="contagem" aria-live="polite" style="margin: 0"></p>
+          <label>
+            <span class="sr-only">Ordenar por</span>
+            <select class="entrada" id="ordem">
+              <option value="relevancia">Mais relevantes</option>
+              <option value="novidades">Novidades</option>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+              <option value="az">Nome (A–Z)</option>
+            </select>
+          </label>
+        </div>
+        <div class="grade-produtos" id="lista-produtos"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pagina-catalogo.js"></script>
+</body>
+</html>

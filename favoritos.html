@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Favoritos — Arrecife Ateliê</title>
+  <meta name="description" content="Suas peças favoritas da Arrecife Ateliê.">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <h1>Favoritos</h1>
+        <p>As peças que você marcou com ♥ ficam guardadas aqui.</p>
+      </div>
+    </section>
+    <section class="container secao">
+      <div class="grade-produtos" id="lista-favoritos"></div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    /* Página simples: lista os produtos favoritados e se atualiza ao desfavoritar. */
+    function renderizarFavoritos() {
+      const produtos = Favoritos.ids().map(buscarProduto);
+      $("#lista-favoritos").innerHTML = produtos.length
+        ? produtos.map(criarCardProduto).join("")
+        : `<div class="vazio" style="grid-column: 1 / -1">
+             <p>Você ainda não favoritou nenhuma peça.</p>
+             <a class="botao botao--cheio" href="catalogo.html">Explorar a loja</a>
+           </div>`;
+      sincronizarCoracoes();
+    }
+    document.addEventListener("DOMContentLoaded", renderizarFavoritos);
+    document.addEventListener("favoritos:atualizado", renderizarFavoritos);
+  </script>
+</body>
+</html>

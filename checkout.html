@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finalizar compra — Arrecife Ateliê</title>
+  <meta name="description" content="Finalize sua compra na Arrecife Ateliê.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <div class="container">
+      <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a> / Sacola / Pagamento</nav>
+      <h1 style="margin-top: 16px">Finalizar compra</h1>
+    </div>
+
+    <!-- Mostrado quando a sacola está vazia -->
+    <div class="container vazio" id="checkout-vazio" hidden>
+      <p>Sua sacola está vazia. Que tal dar uma olhada nas novidades?</p>
+      <a class="botao botao--cheio" href="catalogo.html">Ir para a loja</a>
+    </div>
+
+    <!-- Mostrado depois que o pedido é feito -->
+    <div class="container" id="checkout-sucesso" hidden></div>
+
+    <form class="container checkout" id="form-checkout" novalidate>
+      <div>
+        <!-- 1. DADOS PESSOAIS -->
+        <section class="caixa checkout__etapa">
+          <h2><span class="checkout__numero">1</span> Seus dados</h2>
+          <p class="texto-suave" id="aviso-conta"></p>
+          <div class="campo">
+            <label for="nome">Nome completo</label>
+            <input id="nome" name="nome" autocomplete="name" required minlength="3">
+          </div>
+          <div class="linha-campos">
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="campo">
+              <label for="telefone">Celular (WhatsApp)</label>
+              <input id="telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(81) 90000-0000" required minlength="14">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required>
+          </div>
+        </section>
+
+        <!-- 2. ENTREGA -->
+        <section class="caixa checkout__etapa">
+          <h2><span class="checkout__numero">2</span> Entrega</h2>
+          <label class="opcao"><input type="radio" name="entrega" value="casa" checked> <span>Receber em casa</span><span id="preco-entrega-casa">—</span></label>
+          <label class="opcao"><input type="radio" name="entrega" value="loja"> <span>Retirar na loja — Recife Antigo</span><span>Grátis</span></label>
+
+          <div id="campos-endereco">
+            <div class="linha-campos">
+              <div class="campo">
+                <label for="cep">CEP</label>
+                <input id="cep" name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000" required>
+                <span class="texto-suave" id="status-cep" aria-live="polite"></span>
+              </div>
+              <div class="campo">
+                <label for="cidade">Cidade / UF</label>
+                <input id="cidade" name="cidade" autocomplete="address-level2" required>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="rua">Rua</label>
+              <input id="rua" name="rua" autocomplete="address-line1" required>
+            </div>
+            <div class="linha-campos">
+              <div class="campo">
+                <label for="numero">Número</label>
+                <input id="numero" name="numero" required>
+              </div>
+              <div class="campo">
+                <label for="complemento">Complemento</label>
+                <input id="complemento" name="complemento" autocomplete="address-line2">
+              </div>
+              <div class="campo">
+                <label for="bairro">Bairro</label>
+                <input id="bairro" name="bairro" required>
+              </div>
+            </div>
+          </div>
+          <p class="texto-suave" id="info-retirada" hidden></p>
+        </section>
+
+        <!-- 3. PAGAMENTO -->
+        <section class="caixa checkout__etapa">
+          <h2><span class="checkout__numero">3</span> Pagamento</h2>
+          <p class="mensagem mensagem--erro" style="margin-top: 0">⚠️ Ambiente de demonstração: nenhum pagamento é cobrado e os dados do cartão não são salvos.</p>
+          <label class="opcao"><input type="radio" name="pagamento" value="pix" checked> <span>Pix</span><span>5% off</span></label>
+          <label class="opcao"><input type="radio" name="pagamento" value="cartao"> <span>Cartão de crédito</span><span id="info-parcelas">até 6x</span></label>
+          <label class="opcao"><input type="radio" name="pagamento" value="boleto"> <span>Boleto bancário</span><span>1 a 3 dias</span></label>
+
+          <div id="campos-cartao" hidden>
+            <div class="campo">
+              <label for="cartao-numero">Número do cartão</label>
+              <input id="cartao-numero" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="campo">
+              <label for="cartao-nome">Nome impresso no cartão</label>
+              <input id="cartao-nome" autocomplete="cc-name">
+            </div>
+            <div class="linha-campos">
+              <div class="campo">
+                <label for="cartao-validade">Validade</label>
+                <input id="cartao-validade" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA">
+              </div>
+              <div class="campo">
+                <label for="cartao-cvv">CVV</label>
+                <input id="cartao-cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="campo">
+              <label for="parcelas">Parcelas</label>
+              <select id="parcelas"></select>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- RESUMO DO PEDIDO -->
+      <aside class="caixa resumo" aria-labelledby="titulo-resumo">
+        <h2 id="titulo-resumo" style="font-size: 1.35rem">Resumo do pedido</h2>
+        <div id="resumo-itens"></div>
+
+        <div class="cupom">
+          <label class="sr-only" for="cupom">Cupom de desconto</label>
+          <input class="entrada" id="cupom" placeholder="Cupom de desconto">
+          <button class="botao" type="button" id="aplicar-cupom">Aplicar</button>
+        </div>
+        <p class="texto-suave" id="status-cupom" aria-live="polite"></p>
+
+        <p class="linha-total"><span>Subtotal</span><span id="resumo-subtotal"></span></p>
+        <p class="linha-total" id="linha-desconto" hidden><span>Desconto</span><span id="resumo-desconto"></span></p>
+        <p class="linha-total"><span>Frete</span><span id="resumo-frete"></span></p>
+        <p class="linha-total linha-total--grande"><strong>Total</strong><strong id="resumo-total"></strong></p>
+        <p class="texto-suave" id="resumo-parcelas"></p>
+
+        <p class="mensagem mensagem--erro" id="erro-checkout" role="alert" hidden></p>
+        <button class="botao botao--coral botao--largo" type="submit" style="margin-top: 12px">Confirmar pedido</button>
+        <p class="texto-suave" style="text-align: center">🔒 Compra segura · Troca grátis em 30 dias</p>
+      </aside>
+    </form>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/conta.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pagina-checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre — Arrecife Ateliê</title>
+  <meta name="description" content="Conheça a história da Arrecife Ateliê e visite nossa loja no Recife Antigo.">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <p class="sobretitulo">Nossa história</p>
+        <h1>Nascemos onde a cidade encontra o mar.</h1>
+        <p>O Recife ganhou esse nome por causa dos arrecifes — a linha de pedras que protege o porto e acalma as ondas. A Arrecife Ateliê nasceu com a mesma ideia: roupas que protegem, acolhem e deixam a gente leve.</p>
+      </div>
+    </section>
+
+    <section class="container secao texto-longo">
+      <h2>Do ateliê para a rua</h2>
+      <p>Tudo começou em 2019, numa sala alugada de um casarão da Rua da Moeda, com duas máquinas de costura e muita vontade de fazer moda com cara de Pernambuco. Hoje somos uma equipe de 14 pessoas, entre modelistas, costureiras, fotógrafas e atendentes — quase todas do Recife e da Região Metropolitana.</p>
+      <p>Desenhamos cada peça pensando no nosso clima: tecidos naturais como linho, algodão e viscose, modelagens soltas e cores que conversam com a paisagem da cidade — o azul do mar, o coral dos recifes, o amarelo do frevo e o verde do mangue.</p>
+      <p>Produzimos em pequenas tiragens para evitar desperdício, e as sobras de tecido viram acessórios, forros e embalagens.</p>
+    </section>
+
+    <section class="secao secao--areia">
+      <div class="container">
+        <h2>No que acreditamos</h2>
+        <div class="valores" style="margin-top: 28px">
+          <div class="valor"><h3>🌿 Feito com calma</h3><p>Coleções menores, peças que duram mais. Moda lenta, como a maré.</p></div>
+          <div class="valor"><h3>🧵 Gente daqui</h3><p>Costureiras e artesãs pernambucanas, com remuneração justa e crédito pelo trabalho.</p></div>
+          <div class="valor"><h3>☀️ Para o nosso calor</h3><p>Tecidos que respiram e modelagens pensadas para os 30 °C do Recife.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" id="loja">
+      <div class="container loja">
+        <div>
+          <p class="sobretitulo">Loja física</p>
+          <h2>Venha nos visitar</h2>
+          <p>A loja fica no térreo do nosso ateliê, no Bairro do Recife, pertinho do Marco Zero e da Rua do Bom Jesus. Aos domingos, aproveite o Recife Antigo de Boa para passear e passar aqui.</p>
+          <p><strong><span data-loja="endereco"></span><br><span data-loja="cidade"></span> — CEP <span data-loja="cep"></span></strong></p>
+          <h3>Horários</h3>
+          <ul data-loja-horarios></ul>
+          <h3>Como chegar</h3>
+          <ul>
+            <li>🚌 Ônibus: linhas que param no Cais do Apolo / Marco Zero.</li>
+            <li>🚲 Bike: estação de bicicletas compartilhadas na Praça do Arsenal.</li>
+            <li>🚗 Carro: estacionamentos rotativos na Av. Alfredo Lisboa.</li>
+          </ul>
+          <div class="hero__botoes">
+            <a class="botao botao--cheio" data-rota target="_blank" rel="noopener">Traçar rota</a>
+            <a class="botao" data-whatsapp target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </div>
+        </div>
+        <iframe class="loja__mapa" data-mapa title="Mapa da loja no Recife Antigo" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pagina-institucional.js"></script>
+</body>
+</html>

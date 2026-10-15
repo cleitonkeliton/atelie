@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha conta — Arrecife Ateliê</title>
+  <meta name="description" content="Entre na sua conta Arrecife Ateliê e acompanhe seus pedidos.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <h1 id="titulo-conta">Minha conta</h1>
+        <p id="subtitulo-conta">Entre para ver seus pedidos e comprar mais rápido.</p>
+      </div>
+    </section>
+
+    <!-- VISITANTE: entrar ou criar conta -->
+    <section class="container secao grade-duas" id="area-visitante" hidden>
+      <form class="caixa" id="form-entrar">
+        <h2>Entrar</h2>
+        <div class="campo"><label for="entrar-email">E-mail</label><input id="entrar-email" type="email" autocomplete="email" required></div>
+        <div class="campo"><label for="entrar-senha">Senha</label><input id="entrar-senha" type="password" autocomplete="current-password" required></div>
+        <p class="mensagem mensagem--erro" id="erro-entrar" role="alert" hidden></p>
+        <button class="botao botao--cheio botao--largo" type="submit">Entrar</button>
+      </form>
+
+      <form class="caixa" id="form-cadastro">
+        <h2>Criar conta</h2>
+        <div class="campo"><label for="cad-nome">Nome</label><input id="cad-nome" autocomplete="name" required minlength="2"></div>
+        <div class="campo"><label for="cad-email">E-mail</label><input id="cad-email" type="email" autocomplete="email" required></div>
+        <div class="campo"><label for="cad-senha">Senha (mín. 6 caracteres)</label><input id="cad-senha" type="password" autocomplete="new-password" required minlength="6"></div>
+        <p class="mensagem mensagem--erro" id="erro-cadastro" role="alert" hidden></p>
+        <button class="botao botao--largo" type="submit">Criar conta</button>
+        <p class="texto-suave">Demonstração: os dados ficam apenas neste navegador.</p>
+      </form>
+    </section>
+
+    <!-- LOGADA: pedidos -->
+    <section class="container secao" id="area-cliente" hidden>
+      <div class="secao__topo">
+        <h2>Meus pedidos</h2>
+        <div class="hero__botoes" style="margin: 0">
+          <a class="botao" href="favoritos.html">Meus favoritos</a>
+          <button class="botao" type="button" id="sair">Sair</button>
+        </div>
+      </div>
+      <div id="lista-pedidos"></div>
+    </section>
+
+    <!-- RASTREIO (disponível para todos) -->
+    <section class="secao secao--areia" id="rastreio">
+      <div class="container grade-duas">
+        <div>
+          <h2>Acompanhar pedido</h2>
+          <p class="texto-suave">Digite o número do pedido (ex.: ARC-12345) que enviamos por e-mail.</p>
+          <form class="cupom" id="form-rastreio">
+            <label class="sr-only" for="numero-pedido">Número do pedido</label>
+            <input class="entrada" id="numero-pedido" placeholder="ARC-00000" required>
+            <button class="botao botao--cheio" type="submit">Buscar</button>
+          </form>
+        </div>
+        <div id="resultado-rastreio" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/conta.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pagina-conta.js"></script>
+</body>
+</html>

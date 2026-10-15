@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato — Arrecife Ateliê</title>
+  <meta name="description" content="Fale com a Arrecife Ateliê por WhatsApp, e-mail ou visite nossa loja no Recife Antigo.">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <section class="pagina-topo">
+      <div class="container">
+        <h1>Fale com a gente</h1>
+        <p>Dúvidas sobre tamanho, pedido ou troca? Respondemos em até 1 dia útil — no WhatsApp, geralmente em minutos.</p>
+      </div>
+    </section>
+
+    <section class="container secao grade-duas">
+      <form class="caixa" id="form-contato">
+        <h2>Envie uma mensagem</h2>
+        <div class="campo"><label for="c-nome">Nome</label><input id="c-nome" required autocomplete="name"></div>
+        <div class="campo"><label for="c-email">E-mail</label><input id="c-email" type="email" required autocomplete="email"></div>
+        <div class="campo">
+          <label for="c-assunto">Assunto</label>
+          <select id="c-assunto" required>
+            <option value="">Selecione…</option>
+            <option>Dúvida sobre produto ou tamanho</option>
+            <option>Meu pedido</option>
+            <option>Troca ou devolução</option>
+            <option>Parcerias e imprensa</option>
+            <option>Outro assunto</option>
+          </select>
+        </div>
+        <div class="campo"><label for="c-pedido">Número do pedido (opcional)</label><input id="c-pedido" placeholder="ARC-00000"></div>
+        <div class="campo"><label for="c-mensagem">Mensagem</label><textarea id="c-mensagem" rows="5" required minlength="10"></textarea></div>
+        <p class="mensagem mensagem--sucesso" id="contato-ok" role="status" hidden>Mensagem enviada! Responderemos no seu e-mail em breve. 🌊</p>
+        <button class="botao botao--cheio botao--largo" type="submit">Enviar mensagem</button>
+      </form>
+
+      <div>
+        <h2>Outros canais</h2>
+        <div class="acordeao">
+          <p>💬 <strong>WhatsApp:</strong> <a data-whatsapp target="_blank" rel="noopener">conversar agora</a></p>
+          <p>📞 <strong>Telefone:</strong> <span data-loja="telefone"></span></p>
+          <p>✉️ <strong>E-mail:</strong> <span data-loja="email"></span></p>
+          <p>📸 <strong>Instagram:</strong> <span data-loja="instagram"></span></p>
+          <p>📍 <strong>Loja:</strong> <span data-loja="endereco"></span>, <span data-loja="cidade"></span></p>
+        </div>
+        <h3 style="margin-top: 24px">Horário de atendimento</h3>
+        <ul data-loja-horarios></ul>
+        <p class="texto-suave">Procurando algo rápido? Veja as <a href="ajuda.html#perguntas">perguntas frequentes</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pagina-institucional.js"></script>
+  <script>
+    /*
+     * Envio do formulário de contato.
+     * Aqui apenas simulamos o envio. Para receber de verdade, conecte a um
+     * serviço como Formspree, Netlify Forms ou ao seu próprio back-end
+     * (veja docs/GUIA-DO-CODIGO.md, seção "Próximos passos").
+     */
+    document.getElementById("form-contato").addEventListener("submit", (e) => {
+      e.preventDefault();
+      e.target.reset();
+      document.getElementById("contato-ok").hidden = false;
+    });
+  </script>
+</body>
+</html>

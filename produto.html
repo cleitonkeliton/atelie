@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produto — Arrecife Ateliê</title>
+  <meta name="description" content="Peça da Arrecife Ateliê, moda feita no Recife.">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="cabecalho"></div>
+
+  <!-- Todo o conteúdo é preenchido pelo js/pagina-produto.js de acordo com ?id= na URL -->
+  <main id="conteudo">
+    <div class="container"><nav class="migalhas" id="migalhas" aria-label="Você está em"></nav></div>
+    <div class="container produto" id="produto"></div>
+
+    <section class="secao secao--areia">
+      <div class="container">
+        <p class="sobretitulo">Combina com</p>
+        <h2>Você também pode gostar</h2>
+        <div class="grade-produtos" id="relacionados" style="margin-top: 28px"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Janela do guia de medidas -->
+  <dialog id="guia-medidas" aria-labelledby="titulo-guia">
+    <button class="botao-icone dialog__fechar" type="button" data-fechar-dialog aria-label="Fechar">✕</button>
+    <h2 id="titulo-guia">Guia de medidas</h2>
+    <p class="texto-suave">Medidas do corpo, em centímetros. Na dúvida entre dois tamanhos, escolha o maior.</p>
+    <div class="tabela-rolagem" id="tabela-medidas"></div>
+    <p class="texto-suave">Veja como medir no <a href="ajuda.html#tamanhos">guia completo</a>.</p>
+  </dialog>
+
+  <div id="rodape"></div>
+
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pagina-produto.js"></script>
+</body>
+</html>

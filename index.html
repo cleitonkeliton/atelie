@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrecife Ateliê — Moda feita no Recife</title>
+  <meta name="description" content="Arrecife Ateliê: moda leve e autoral feita no Recife. Vestidos, camisas, saias e acessórios inspirados no mar, no frevo e no mangue.">
+  <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
+  <!-- Fontes da identidade visual: Fraunces (títulos) e Inter (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Cabeçalho é montado pelo js/layout.js -->
+  <div id="cabecalho"></div>
+
+  <main id="conteudo">
+    <!-- DESTAQUE PRINCIPAL (hero) -->
+    <section class="hero">
+      <div class="container hero__grade">
+        <div>
+          <p class="sobretitulo">Nova coleção · Verão 2027</p>
+          <h1>Moda leve, com a calma da maré.</h1>
+          <p>Peças autorais desenhadas e costuradas no Recife, em tecidos naturais que respiram com o calor de Pernambuco.</p>
+          <div class="hero__botoes">
+            <a class="botao botao--cheio" href="catalogo.html">Comprar agora</a>
+            <a class="botao" href="catalogo.html?ordem=novidades">Ver novidades</a>
+          </div>
+        </div>
+        <!-- As duas peças em destaque são desenhadas pelo JavaScript -->
+        <div class="hero__arte" id="hero-arte" aria-hidden="true"></div>
+      </div>
+      <div class="hero__ondas"></div>
+    </section>
+
+    <!-- VANTAGENS -->
+    <section class="container vantagens" aria-label="Vantagens de comprar com a gente">
+      <div class="vantagem"><span class="vantagem__icone">🚚</span><div><strong>Frete grátis no Recife</strong><span>Em compras acima de R$ 299</span></div></div>
+      <div class="vantagem"><span class="vantagem__icone">💳</span><div><strong>Até 6x sem juros</strong><span>Ou 5% de desconto no Pix</span></div></div>
+      <div class="vantagem"><span class="vantagem__icone">🔁</span><div><strong>Troca fácil</strong><span>Primeira troca grátis em 30 dias</span></div></div>
+      <div class="vantagem"><span class="vantagem__icone">🏬</span><div><strong>Retire na loja</strong><span>No Recife Antigo, sem custo</span></div></div>
+    </section>
+
+    <!-- COLEÇÕES -->
+    <section class="secao" id="colecoes">
+      <div class="container">
+        <div class="secao__topo">
+          <div>
+            <p class="sobretitulo">Coleções</p>
+            <h2>Três jeitos de vestir o Recife</h2>
+          </div>
+          <p>Cada coleção nasce de um pedaço da cidade: o rio, o carnaval e o mangue.</p>
+        </div>
+        <div class="grade-colecoes" id="lista-colecoes"></div>
+      </div>
+    </section>
+
+    <!-- MAIS AMADOS -->
+    <section class="secao secao--areia">
+      <div class="container">
+        <div class="secao__topo">
+          <div>
+            <p class="sobretitulo">Mais amados</p>
+            <h2>Os queridinhos da estação</h2>
+          </div>
+          <a class="botao" href="catalogo.html">Ver tudo</a>
+        </div>
+        <div class="grade-produtos" id="lista-destaques"></div>
+      </div>
+    </section>
+
+    <!-- PROMOÇÃO -->
+    <section class="secao">
+      <div class="container">
+        <div class="promo">
+          <div>
+            <h2>10% off na primeira compra</h2>
+            <p>Use o cupom <strong>RECIFE10</strong> no checkout. Válido para todo o site.</p>
+          </div>
+          <a class="botao botao--claro" href="catalogo.html?promo=1">Ver promoções</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVIDADES -->
+    <section class="secao" style="padding-top: 0">
+      <div class="container">
+        <div class="secao__topo">
+          <div>
+            <p class="sobretitulo">Acabou de chegar</p>
+            <h2>Novidades</h2>
+          </div>
+          <a class="botao" href="catalogo.html?ordem=novidades">Ver novidades</a>
+        </div>
+        <div class="grade-produtos" id="lista-novidades"></div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="secao secao--areia">
+      <div class="container">
+        <p class="sobretitulo">Quem veste, conta</p>
+        <h2>O que dizem nossas clientes</h2>
+        <div class="grade-depoimentos" style="margin-top: 32px">
+          <figure class="depoimento">
+            <span class="estrelas" aria-label="5 estrelas">★★★★★</span>
+            <blockquote>“O Vestido Capibaribe é a peça mais fresca que já tive. Usei no Galo da Madrugada e aguentou tudo!”</blockquote>
+            <figcaption class="texto-suave">Mariana — Boa Viagem</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <span class="estrelas" aria-label="5 estrelas">★★★★★</span>
+            <blockquote>“Comprei de manhã e retirei na loja à tarde. Atendimento lindo no Recife Antigo.”</blockquote>
+            <figcaption class="texto-suave">Rafael — Casa Forte</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <span class="estrelas" aria-label="5 estrelas">★★★★☆</span>
+            <blockquote>“Linho de qualidade e caimento perfeito. A troca de tamanho foi super simples.”</blockquote>
+            <figcaption class="texto-suave">Juliana — Olinda</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOJA FÍSICA -->
+    <section class="secao" id="loja">
+      <div class="container loja">
+        <div>
+          <p class="sobretitulo">Visite a gente</p>
+          <h2>Nosso ateliê no Recife Antigo</h2>
+          <p>Entre casarões coloridos e a poucos passos do Marco Zero, a loja é também o ateliê onde as peças são pensadas. Venha provar, tomar um café e conhecer quem costura.</p>
+          <p><strong id="loja-endereco"></strong></p>
+          <ul id="loja-horarios"></ul>
+          <a class="botao botao--cheio" href="sobre.html#loja">Como chegar</a>
+        </div>
+        <iframe class="loja__mapa" id="loja-mapa" title="Mapa da loja no Recife Antigo" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="secao secao--areia">
+      <div class="container" style="text-align: center; max-width: 620px">
+        <h2>Entre na nossa maré 🌊</h2>
+        <p class="texto-suave">Receba lançamentos, convites para eventos no ateliê e cupons exclusivos.</p>
+        <form class="newsletter" data-newsletter style="justify-content: center; margin-top: 20px">
+          <label class="sr-only" for="news-home">Seu e-mail</label>
+          <input class="entrada" id="news-home" type="email" required placeholder="seu@email.com">
+          <button class="botao botao--coral" type="submit">Quero receber</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé é montado pelo js/layout.js -->
+  <div id="rodape"></div>
+
+  <!-- A ordem importa: dados -> funções auxiliares -> layout -> script da página -->
+  <script src="js/dados.js"></script>
+  <script src="js/ilustracoes.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/favoritos.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pagina-inicial.js"></script>
+</body>
+</html>
